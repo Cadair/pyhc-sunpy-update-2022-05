@@ -1,6 +1,6 @@
 #!/bin/sh
 
-index=./index.org
+index=./talk.org
 
 oxreveal=$(find ~/.emacs.d/elpa/28.0/develop/ -type d -name "ox-reveal-*" -print -quit)
 

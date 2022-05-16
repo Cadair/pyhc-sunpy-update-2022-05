@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>SunPy Spring 2022 Update</title>
+<meta name="author" content="(Stuart Mumford)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./src/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./src/reveal.js/dist/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="org.css"/>
+<link rel="stylesheet" href="./src/reveal.js/plugin/highlight/monokai.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./images/background_1.jpg"><h3>SunPy Spring 2022 Update</h3>
+<h4>Stuart Mumford</h4>
+<h5>Aperio Software</h5>
+<a href="https://sunpy.org"><img style='width: 40%; margin-top: 100px; height: 25%; margin-right: 5%;' src='images/sunpy.svg'/></a>
+</section>
+
+
+<section>
+<section id="slide-orgadc5758" data-background="./images/background_1.jpg">
+<h2 id="orgadc5758">A Reminder</h2>
+<div class='large-left'>
+
+<p>
+SunPy consists of a core library, a set of affiliated packages and various tools and infrastructure.
+</p>
+
+<ul>
+<li>Regular releases of the core package: every 6 months</li>
+<li>29 contributors to the latest 4.0 release of the core package, including 1310 commits in 182 merged pull requests.</li>
+<li>Also 8 packages affiliated with SunPy, 6 maintained by the sunpy developers.</li>
+<li>Releases since the last PyHC meeting:
+<ul>
+<li><a href="https://docs.sunpy.org/en/stable/whatsnew/3.1.html">3.1</a> and <a href="https://docs.sunpy.org/en/stable/whatsnew/4.0.html">4.0</a> releases of sunpy core</li>
+<li><a href="https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#id3">2.0 release</a> of ndcube: A major redesign.</li>
+
+</ul></li>
+
+</ul>
+
+
+</div>
+
+<div class='small-right'>
+
+
+<div id="org45f04bf" class="figure">
+<p><img src="./images/sunpy_logo_portrait.svg" alt="sunpy_logo_portrait.svg" class="org-svg" width="200px" />
+</p>
+</div>
+
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb5ad7d5" data-background="./images/background_1.jpg">
+<h2 id="orgb5ad7d5">SunPy Coordination Meeting 2022</h2>
+<p>
+SunPy is having its annual coordination meeting in hybrid format in August this year.
+</p>
+
+<p>
+All are welcome to attend, more details are here:
+</p>
+
+<p>
+<a href="https://sunpy.org/project/meetings">https://sunpy.org/project/meetings</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd022924" data-background="./images/background_1.jpg">
+<h2 id="orgd022924">New features in 4.0</h2>
+<p>
+The 4.0 release of sunpy (the 4th long term support release), was released at the start of May, its headline features are:
+</p>
+
+<ul>
+<li>Major improvements to affine transforms, which are used for rotating maps.
+<ul>
+<li>Now supports a much faster affine transform based on OpenCV, if opencv is installed.</li>
+<li>Consistent behaviour between algorithms for NaNs in the images, NaNs as missing values and clipping.</li>
+<li>A new decorator is also provided for registering your own affine transform functions (i.e. GPU or Dask based).</li>
+
+</ul></li>
+<li>Various other cleanups, see the <a href="https://docs.sunpy.org/en/stable/whatsnew/4.0.html">Release Notes</a>.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org2634e47" data-background="./images/background_1.jpg">
+<h2 id="org2634e47">ndcube 2.0</h2>
+<p>
+The 2.0 release of the <code>ndcube</code> package is a complete rewrite, and new API.
+</p>
+
+<p>
+We learnt a lot of lessons in writing ndcube 1.x and decided that because of changes to WCS (functional coordinates) in Astropy it was a great time to rethink.
+</p>
+
+<p>
+Changes include:
+</p>
+
+<ul>
+<li>All coordinate related information now stored in Astropy <a href="https://docs.astropy.org/en/stable/wcs/wcsapi.html">WCS API</a> compatible objects, with no bookkeeping in ndcube.</li>
+<li><code>.extra_coords</code> is also now a WCS object.</li>
+<li>Vastly improved (and changed) <code>.crop</code> and <code>.crop_by_values</code> methods for slicing the cube based on world coordinates.</li>
+<li>Simplified quick-look plotting built in.</li>
+
+</ul>
+
+<p>
+Read all about it <a href="https://docs.sunpy.org/projects/ndcube/en/stable/index.html">in the docs</a>, including <a href="https://docs.sunpy.org/projects/ndcube/en/stable/introduction.html#why-ndcube">why you might use ndcube</a> (and not xarray).
+</p>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5d16539" data-background="./images/background_1.jpg">
+<h2 id="org5d16539">Work on <code>TimeSeries</code> has started under a HDEE Grant</h2>
+<div class='left'>
+
+<p>
+A HDEE grant awarded to SunPy has hired a developer who is currently working on improving how our <code>TimeSeries</code> class renders in Jupyter notebooks (or just HTML in general).
+</p>
+
+</div>
+
+<div class='right'>
+
+
+<div id="org796a82a" class="figure">
+<p><img src="./images/timeseries_repr.png" alt="timeseries_repr.png" width="400px" />
+</p>
+</div>
+
+</div>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org6466d72" data-background="./images/background_1.jpg">
+<h2 id="org6466d72">Other News from SunPy</h2>
+<p>
+We won a NASA grant under the "Open Source Tools, Frameworks, and Libraries" program for <a href="https://sunpy.org/posts/2021/2021-10-08_nasa_osftl_grant">"Strengthening the Foundations of the SunPy Ecosystem"</a>.
+This includes money for technical infrastructure, coordinates, and documentation and teaching.
+</p>
+
+<p>
+aiapy continues to develop with <a href="https://sunpy.org/posts/2022/2022-01-06-aiapy-demo">lots of instrument specific features</a> for those working on AIA data.
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./src/reveal.js/dist/reveal.js"></script>
+<script src="./src/reveal.js/plugin/notes/notes.js"></script>
+<script src="./src/reveal.js/plugin/highlight/highlight.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealNotes, multiplex, RevealHighlight],
+multiplex: {
+    secret: null, // null if client
+    id: 'aa9e7eccd2ce91a0', // id, obtained from socket.io server
+    url: 'https://reveal-multiplex.glitch.me:433' // Location of socket.io server
+},
+dependencies: [ { src: 'https://reveal-multiplex.glitch.me:433/socket.io/socket.io.js', async: true }, { src: 'https://reveal-multiplex.glitch.me:433/client.js', async: true } ]
+});
+
+</script>
+</body>
+</html>
