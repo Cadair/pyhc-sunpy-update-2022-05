@@ -41,7 +41,7 @@ SunPy consists of a core library, a set of affiliated packages and various tools
 
 * SunPy Coordination Meeting 2022
 
-SunPy is having it's annual coordination meeting in hybrid format in August this year.
+SunPy is having its annual coordination meeting in hybrid format in August this year.
 
 All are welcome to attend, more details are here:
 
@@ -50,7 +50,7 @@ https://sunpy.org/project/meetings
 
 * New features in 4.0
 
-The 4.0 release of sunpy (the 4th long term support release), was released at the start of May, it's headline features are:
+The 4.0 release of sunpy (the 4th long term support release), was released at the start of May, its headline features are:
 
 - Major improvements to affine transforms, which are used for rotating maps.
   - Now supports a much faster affine transform based on OpenCV, if opencv is installed.
@@ -73,6 +73,24 @@ Changes include:
 - Simplified quick-look plotting built in.
 
 Read all about it [[https://docs.sunpy.org/projects/ndcube/en/stable/index.html][in the docs]], including [[https://docs.sunpy.org/projects/ndcube/en/stable/introduction.html#why-ndcube][why you might use ndcube]] (and not xarray).
+
+
+
+* Work on ~TimeSeries~ has started under a HDEE Grant
+
+#+REVEAL_HTML: <div class='left'>
+
+A HDEE grant awarded to SunPy has hired a developer who is currently working on improving how our ~TimeSeries~ class renders in Jupyter notebooks (or just HTML in general).
+ 
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class='right'>
+
+#+attr_html: :width 400px
+[[./images/timeseries_repr.png]]
+
+#+REVEAL_HTML: </div>
+
 
 
 * Other News from SunPy
