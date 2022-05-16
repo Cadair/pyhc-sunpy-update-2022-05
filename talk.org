@@ -111,3 +111,11 @@ aiapy continues to develop with [[https://sunpy.org/posts/2022/2022-01-06-aiapy-
 During the hack sessions we would like to work on some PyHC tutorials using SunPy packages and other PyHC packages.
 
 If you have any ideas let myself or Laura know!
+
+
+* Come say Hi!
+
+  * Matrix chat, join us [[https://openastronomy.element.io/#/room/#sunpy:openastronomy.org][on Element]].
+  * sunpy & sunpy-dev @googlegroups.com mailing lists
+  * Twitter [[https://twitter.com/SunPyProject][@SunPyProject]]
+  * Weekly community calls (Wednesday 1600 UTC): https://sunpy.org/jitsi
