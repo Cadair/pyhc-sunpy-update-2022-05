@@ -11,3 +11,5 @@ progn="(progn
   (org-reveal-export-to-html))"
 
 emacs --batch --visit "$index" --eval "$progn" --kill
+sed -i 's/, multiplex]/]/' talk.html
+sed -i 's/, multiplex]/]/' talk_client.html
