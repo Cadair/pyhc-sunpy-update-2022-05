@@ -22,3 +22,14 @@ body {
     width: 49%;
     float: right;
 }
+
+
+.large-left {
+    width: 65%;
+    float: left;
+}
+
+.smallright {
+    width: 33%;
+    float: right;
+}

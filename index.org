@@ -9,63 +9,74 @@
 #+OPTIONS: num:nil
 #+REVEAL_EXTRA_CSS: org.css
 
-#+TITLE: SunPy: Python for Solar Physics
+#+TITLE: SunPy Spring 2022 Update
 #+AUTHOR: Stuart Mumford
 #+REVEAL_TITLE_SLIDE: <h3>%t</h3>
 #+REVEAL_TITLE_SLIDE: <h4>%a</h4>
 #+REVEAL_TITLE_SLIDE: <a href="https://aperio.software"><img style='float: left; width: 30%%; margin-top: 100px; height: 25%%;' src='images/aperio.svg'/></a><a href="https://sunpy.org"><img style='float: right; width: 30%%; margin-top: 100px; height: 25%%; margin-right: 5%%;' src='images/sunpy.svg'/></a>
 
-* Me
 
-#+REVEAL_HTML: <div class='left'>
+* A Reminder
+#+REVEAL_HTML: <div class='large-left'>
 
-Find me online:
+SunPy consists of a core library, a set of affiliated packages and various tools and infrastructure.
 
-- [[http://stuartmumford.uk][stuartmumford.uk]]
-- [[https://matrix.to/#/@cadair:cadair.com][@cadair:cadair.com]] on Matrix
-- [[https://github.com/Cadair][@Cadair]] on GitHub
-- [[https://twitter.com/stuartmumford][@stuartmumford]] on Twitter
+- Regular releases of the core package: every 6 months
+- 29 contributors to the latest 4.0 release of the core package, including 1310 commits in 182 merged pull requests.
+- Also 8 packages affiliated with SunPy, 6 maintained by the sunpy developers.
+- Releases since the last PyHC meeting:
+  - [[https://docs.sunpy.org/en/stable/whatsnew/3.1.html][3.1]] and [[https://docs.sunpy.org/en/stable/whatsnew/4.0.html][4.0]] releases of sunpy core
+  - [[https://docs.sunpy.org/projects/ndcube/en/stable/whatsnew/changelog.html#id3][2.0 release]] of ndcube: A major redesign.
+
+ 
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class='small-right'>
+
+#+attr_html: :width 200px
+[[./images/sunpy_logo_portrait.svg]]
 
 #+REVEAL_HTML: </div>
 
-#+REVEAL_HTML: <div class='right'>
+* SunPy Coordination Meeting 2022
 
-#+attr_html: :width 500px
-[[./images/cadair.jpg]]
+SunPy is having it's annual coordination meeting in hybrid format in August this year.
 
-#+REVEAL_HTML: </div>
+All are welcome to attend, more details are here:
 
-# Some Maths
-* Maths!
+https://sunpy.org/project/meetings
 
-${n! \over k!(n-k)!} = {n \choose k}$
 
-\begin{equation}
-x=\sqrt{b}
-\end{equation}
+* New features in 4.0
 
-If $a^2=b$ and \( b=2 \), then the solution must be either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+The 4.0 release of sunpy (the 4th long term support release), was released at the start of May, it's headline features are:
 
-* Code example with Babel
+- Major improvements to affine transforms, which are used for rotating maps.
+  - Now supports a much faster affine transform based on OpenCV, if opencv is installed.
+  - Consistent behaviour between algorithms for NaNs in the images, NaNs as missing values and clipping.
+  - A new decorator is also provided for registering your own affine transform functions (i.e. GPU or Dask based).
+- Various other cleanups, see the [[https://docs.sunpy.org/en/stable/whatsnew/4.0.html][Release Notes]].
 
-#+begin_src python :session example :exports both
-  msg = "Hello World"
 
-  msg
-#+end_src
+* ndcube 2.0
 
-#+RESULTS:
-: Hello World
+The 2.0 release of the ~ndcube~ package is a complete rewrite, and new API.
 
-# AIA
-*
-  :PROPERTIES:
-  :reveal_background: ./images/fulldiskmulticolor.jpg
-  :reveal_background_trans: slide
-  :END:
+We learnt a lot of lessons in writing ndcube 1.x and decided that because of changes to WCS (functional coordinates) in Astropy it was a great time to rethink.
 
-# DKIST
-*
-  :PROPERTIES:
-  :reveal_extra_attr: data-background-video="" data-background-video-loop=true
-  :END:
+Changes include:
+
+- All coordinate related information now stored in Astropy [[https://docs.astropy.org/en/stable/wcs/wcsapi.html][WCS API]] compatible objects, with no bookkeeping in ndcube.
+- ~.extra_coords~ is also now a WCS object.
+- Vastly improved (and changed) ~.crop~ and ~.crop_by_values~ methods for slicing the cube based on world coordinates.
+- Simplified quick-look plotting built in.
+
+Read all about it [[https://docs.sunpy.org/projects/ndcube/en/stable/index.html][in the docs]], including [[https://docs.sunpy.org/projects/ndcube/en/stable/introduction.html#why-ndcube][why you might use ndcube]] (and not xarray).
+
+
+* Other News from SunPy
+
+We won a NASA grant under the "Open Source Tools, Frameworks, and Libraries" program for [[https://sunpy.org/posts/2021/2021-10-08_nasa_osftl_grant]["Strengthening the Foundations of the SunPy Ecosystem"]].
+This includes money for technical infrastructure, coordinates, and documentation and teaching.
+
+aiapy continues to develop with [[https://sunpy.org/posts/2022/2022-01-06-aiapy-demo][lots of instrument specific features]] for those working on AIA data.
