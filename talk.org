@@ -20,6 +20,7 @@
 #+REVEAL_TITLE_SLIDE: <h4>%a</h4>
 #+REVEAL_TITLE_SLIDE: <h5>Aperio Software</h5>
 #+REVEAL_TITLE_SLIDE: <a href="https://sunpy.org"><img style='width: 40%%; margin-top: 100px; height: 25%%; margin-right: 5%%;' src='images/sunpy.svg'/></a>
+#+REVEAL_TITLE_SLIDE: <p>Follow along at home: <a href="https://cadair.github.io/pyhc-sunpy-update-2022-05/">https://cadair.github.io/pyhc-sunpy-update-2022-05/</a></p>
 
 
 * A Reminder
