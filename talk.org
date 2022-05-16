@@ -98,10 +98,16 @@ A HDEE grant awarded to SunPy has hired a developer who is currently working on 
 #+REVEAL_HTML: </div>
 
 
-
 * Other News from SunPy
 
 We won a NASA grant under the "Open Source Tools, Frameworks, and Libraries" program for [[https://sunpy.org/posts/2021/2021-10-08_nasa_osftl_grant]["Strengthening the Foundations of the SunPy Ecosystem"]].
 This includes money for technical infrastructure, coordinates, and documentation and teaching.
 
 aiapy continues to develop with [[https://sunpy.org/posts/2022/2022-01-06-aiapy-demo][lots of instrument specific features]] for those working on AIA data.
+
+
+* Hack Ideas
+
+During the hack sessions we would like to work on some PyHC tutorials using SunPy packages and other PyHC packages.
+
+If you have any ideas let myself or Laura know!
