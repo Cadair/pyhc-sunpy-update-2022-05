@@ -8,6 +8,11 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 #+REVEAL_EXTRA_CSS: org.css
+#+REVEAL_MULTIPLEX_ID: aa9e7eccd2ce91a0
+#+REVEAL_MULTIPLEX_SECRET: 16527082544526497753
+#+REVEAL_MULTIPLEX_URL: https://reveal-multiplex.glitch.me:433
+#+REVEAL_MULTIPLEX_SOCKETIO_URL: https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.0.6/socket.io.min.js
+#+REVEAL_PLUGINS: (highlight)
 
 #+TITLE: SunPy Spring 2022 Update
 #+AUTHOR: Stuart Mumford
